@@ -5,7 +5,7 @@ import { CourseItem } from '../course-item.model';
   templateUrl: './course-item.component.html',
   styleUrls: ['./course-item.component.css']
 })
-export class CourseitemComponent implements OnInit {
+export class CourseItemComponent implements OnInit {
   @Input() public courseItem: CourseItem
   constructor() { }
 

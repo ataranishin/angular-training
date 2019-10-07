@@ -4,10 +4,10 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
 import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
-// import { CourseComponent } from './course-content/course/course.component';
-// import { CourseitemComponent } from './course-content/courseitem/courseitem.component'
-import { CourseContentModule } from './course-content/course-content.module';
-import { SearchpanelModule } from './searchpanel/searchpanel.module'
+
+
+import { CoursesContentModule } from './courses-content/courses-content.module';
+import { SearchPanelModule } from './search-panel/search-panel.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,8 +16,8 @@ import { SearchpanelModule } from './searchpanel/searchpanel.module'
     BrowserModule,
     CoreModule,
     BreadcrumbModule,
-    CourseContentModule,
-    SearchpanelModule
+    CoursesContentModule,
+    SearchPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
