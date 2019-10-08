@@ -1,4 +1,4 @@
 <div>
-  <app-courseitem *ngFor="let item of courseItems" [courseItem]="item"></app-courseitem>
-  <button type="submit" class="btn btn-outline-dark btn-default btn-block">Load More</button>
+  <app-courseitem *ngFor="let item of courseItems; let i=index" [courseItem]="item" (logId)="logId($event)"></app-courseitem>
+  <button apphighlight type="submit" class="btn btn-outline-dark btn-default btn-block">Load More</button>
 </div>
