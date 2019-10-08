@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 
 export interface CourseItem {
+  topRated: boolean,
   id: number,
   title: string,
   creationDate: Date,
-  duration: string,
+  duration: number,
   description: string
 }
 export abstract class CourseItemService {

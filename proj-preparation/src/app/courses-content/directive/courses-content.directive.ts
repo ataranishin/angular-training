@@ -4,14 +4,14 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
   selector: '[border]'
 })
 export class BorderDirective implements OnInit {
-  @Input() border: Date;
+  @Input() border: number;
 
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
     this.setBorder(this.border);
   }
-  private setBorder(creationDate: Date): void {
+  private setBorder(creationDate: number): void {
     const currentDate  = new Date().getTime();
     let borderColor = null;
 

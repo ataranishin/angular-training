@@ -1,4 +1,7 @@
 <div>
-  <app-courseitem *ngFor="let item of courseItems; let i=index" [courseItem]="item" (logId)="logId($event)"></app-courseitem>
-  <button apphighlight type="submit" class="btn btn-outline-dark btn-default btn-block">Load More</button>
+  <app-courseitem *ngFor="let item of courseItems | orderBy:'creationDate'; let i=index" [courseItem]="item" (logId)="logId($event)"></app-courseitem>
+    <div *ngIf='!courseItems.length' class='no-data'>
+      No data. Feel free to add new course.
+    </div>
+  <button *ngIf='courseItems.length' type="submit" class="btn btn-outline-dark btn-default btn-block">Load More</button>
 </div>

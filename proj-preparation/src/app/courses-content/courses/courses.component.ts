@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { CourseItem } from '../course-item.model';
-import { CourseItem, CourseItemService } from '../courses-content.service';
-import { CourseItemPublicService } from '../course-item-public.service';
+import { CourseItem, CourseItemService } from '../service/courses-content.service';
+import { CourseItemPublicService } from '../service/course-item-public.service';
 
 @Component({
   selector: 'app-courses',
