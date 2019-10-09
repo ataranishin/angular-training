@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+        <input type="text" #search name="search" id="search" [(ngModel)]="searchInput"/>
+        <button (click)="consoleInputValue(search.value)" type="button" class="ml-5 btn btn-outline-dark">Search</button>
+    </div>
+    <div class="col text-right">
+      <button type="button" class="btn btn-outline-dark">Add course</button>
+    </div>
+  </div>
+</div>

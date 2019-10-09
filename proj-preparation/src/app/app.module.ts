@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
-import { CoursesContentModule } from './courses-content/courses-content.module';
-import { SearchPanelModule } from './search-panel/search-panel.module';
+import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 import {RouterModule} from '@angular/router';
+import { CourseItemPublicService } from './core/service/course-item-public.service';
+import { CourseItemService } from './core/service/courses-content.service';
 import {ROUTES} from './app.routes';
 
 @NgModule({
@@ -17,14 +17,17 @@ import {ROUTES} from './app.routes';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule,
-    BreadcrumbModule,
-    CoursesContentModule,
-    SearchPanelModule,
     ReactiveFormsModule,
+    SharedModule,
+    PagesModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: CourseItemService,
+    //   useClass: CourseItemPublicService
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

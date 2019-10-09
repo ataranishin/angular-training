@@ -1,5 +1,5 @@
 import { Route } from '@angular/router'
-import { CoursesComponent } from './courses-content/courses/courses.component'
+import { CoursesComponent } from './pages/search-page/courses/courses.component'
 
 export const ROUTES: Route[] = [
   {path: 'courses', component: CoursesComponent},
