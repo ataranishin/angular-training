@@ -6,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumb.component.css']
 })
 export class BreadcrumbComponent {
-  breadcrumbText: string = "Course"
+  public breadcrumbText: string = "Course"
 }

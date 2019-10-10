@@ -1,5 +1,3 @@
-import { Injectable } from '@angular/core';
-
 export interface ICourseItem {
   topRated: boolean,
   id: number,

@@ -1,7 +1,7 @@
 .no-data {
   text-align: center;
 }
-ul {
+.courses-list {
   list-style: none;
   width: 70%;
   margin: auto;

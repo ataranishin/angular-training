@@ -8,12 +8,10 @@ import {RouterModule} from '@angular/router';
 import { CourseItemPublicService } from './core/service/course-item-public.service';
 // import { CourseItemService } from './core/service/courses-content.service';
 import {ROUTES} from './app.routes';
-import { CoursePageComponent } from './app/course-page/course-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursePageComponent,
   ],
   imports: [
     BrowserModule,

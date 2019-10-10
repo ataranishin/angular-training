@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ICourseItem } from './courses-content.service'
+import { ICourseItem } from '../../pages/search-page/course/courses-content.model'
 
-
-const courses: ICourseItem[] = [
+export const courses: ICourseItem[] = [
   {
     topRated: true,
     id: 1,

@@ -1,7 +1,7 @@
 <div class="mt-5 alert alert-primary">
   <article border="course.creationDate" class="row" [ngClass]="{'top-rated':course.topRated}">
-    <span *ngIf='course.topRated'>★</span>
-    <h1 class="col-10">{{course.title }}</h1>
+    <span *ngIf='course.topRated'></span>
+    <h1 class="course-headline col-10">{{course.title }}</h1>
     <div class="col-8">{{course.description}}</div>
     <div class="col-2">
       <div>{{course.duration | duration }}</div>

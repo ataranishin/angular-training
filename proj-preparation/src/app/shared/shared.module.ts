@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DurationPipe } from './pipes/duration.pipe';
 import { OrderByPipe } from './pipes/orderBy.pipe';
 import { BorderDirective } from './directive/border.directive';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { BorderDirective } from './directive/border.directive';
     DurationPipe,
     OrderByPipe,
     BorderDirective,
-
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -31,6 +32,7 @@ import { BorderDirective } from './directive/border.directive';
     BreadcrumbComponent,
     DurationPipe,
     OrderByPipe,
+    FilterPipe,
     BorderDirective,
   ]
 })

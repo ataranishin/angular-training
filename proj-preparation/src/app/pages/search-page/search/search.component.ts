@@ -7,8 +7,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  searchInput:string = "Search";
-  public searchText: string;
+  public searchInput:string = "Search";
   constructor() { }
 
   public consoleInputValue(value):void {

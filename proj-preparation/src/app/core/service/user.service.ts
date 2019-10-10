@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-const storageName = 'usermodel';
 
+const storageName = 'usermodel';
 const userData = [
   {name: 'Alex'},
   {name: "Tom"}

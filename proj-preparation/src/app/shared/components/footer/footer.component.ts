@@ -6,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  footerText: string = "Copyright © Videocurses, All Rights Reserved";
+  public footerText: string = "Copyright © Videocurses, All Rights Reserved";
 }

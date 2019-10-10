@@ -6,6 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  userLoginPlaceholder: string = "User Login";
-  buttonLogOffText: string = "Log Off";
+  public userLoginPlaceholder: string = "User Login";
+  public buttonLogOffText: string = "Log Off";
 }

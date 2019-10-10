@@ -7,7 +7,7 @@ import { AuthService } from '../../../core/service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  userList;
+  public userList;
   public username: string;
   public pass: string;
   constructor(private userStorageService: AuthService){}
