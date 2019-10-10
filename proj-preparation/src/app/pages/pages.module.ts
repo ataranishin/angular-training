@@ -6,11 +6,12 @@ import { CoursesComponent } from './search-page/courses/courses.component';
 import { SearchComponent } from './search-page/search/search.component';
 import { SharedModule } from '../shared/shared.module';
 
+
 @NgModule({
   declarations: [
     CourseComponent,
     CoursesComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     CommonModule,
@@ -19,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     CoursesComponent,
+    CoursePageComponent
   ]
 })
 export class PagesModule {}

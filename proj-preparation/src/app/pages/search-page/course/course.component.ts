@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Input, Output, SimpleChanges } from '@angular/core';
-import { CourseItem } from '../../../core/service/courses-content.service';
+import { ICourseItem } from '../../../core/service/courses-content.service';
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
@@ -7,7 +7,7 @@ import { CourseItem } from '../../../core/service/courses-content.service';
 })
 export class CourseComponent implements OnInit {
   constructor() { }
-  @Input() public course: CourseItem
+  @Input() public course: ICourseItem
   @Output() public logId = new EventEmitter<number>();
   log(id) {
     this.logId.emit(id);
