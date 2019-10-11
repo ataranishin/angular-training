@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   greeting = "hello";
   title = 'project-preparation';
+  public isLogin: boolean = false;
+  public onclicked(isLogin): void {
+    this.isLogin = isLogin;
+  }
 }

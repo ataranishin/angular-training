@@ -4,9 +4,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
-import {RouterModule} from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { CourseItemPublicService } from './core/service/course-item-public.service';
-// import { CourseItemService } from './core/service/courses-content.service';
+
 import {ROUTES} from './app.routes';
 
 @NgModule({
@@ -23,10 +23,7 @@ import {ROUTES} from './app.routes';
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
-    // {
-    //   provide: CourseItemService,
-    //   useClass: CourseItemPublicService
-    // }
+
   ],
   bootstrap: [AppComponent]
 })

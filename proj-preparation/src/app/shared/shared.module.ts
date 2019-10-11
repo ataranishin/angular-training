@@ -19,11 +19,11 @@ import { FilterPipe } from './pipes/filter.pipe';
     DurationPipe,
     OrderByPipe,
     BorderDirective,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     HeaderComponent,

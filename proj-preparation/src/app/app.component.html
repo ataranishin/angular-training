@@ -2,6 +2,10 @@
 <!-- <app-header></app-header>
 <app-breadcrumb></app-breadcrumb>
 <app-footer></app-footer> -->
-<!-- <app-login></app-login> -->
-<app-courses></app-courses>
-<!-- <app-login></app-login> -->
+
+
+<!-- <ng-template #logger>
+  <app-login  (clicked)="onclicked($event)"></app-login>
+</ng-template>
+<app-courses *ngIf="isLogin; else logger"></app-courses> -->
+<app-add-course></app-add-course>

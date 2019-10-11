@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from '../../../core/service/auth.service';
 
 @Component({
@@ -10,10 +10,18 @@ export class LoginComponent {
   public userList;
   public username: string;
   public pass: string;
+  @Output() public clicked: EventEmitter<boolean> = new EventEmitter();
   constructor(private userStorageService: AuthService){}
   ngOnInit() {
     this.userList = this.userStorageService.getUserList();
 
+  }
+  isVisible() {
+    this.clicked.emit(true);
+  }
+
+  displayCourses() {
+    console.log(this.userStorageService.isAuth());
   }
   addItem(name): void {
    this.userList = this.userStorageService.addItem({name});
@@ -23,12 +31,4 @@ export class LoginComponent {
    this.userList = this.userStorageService.delete({name});
    console.log(localStorage);
  }
-
-  // loginInfo() {
-  //   console.log('User Name: ' + this.username);
-  //   console.log('Password: ' + this.pass);
-  //   localStorage.setItem('user', this.username);
-  //   let curUser = JSON.parse(localStorage.getItem('user'));
-  //   let token = curUser.token;
-  // }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ICourseItem } from '../../pages/search-page/course/courses-content.model'
+import { ICourseItem } from './courses-content.service'
+
 
 export const courses: ICourseItem[] = [
   {
@@ -83,7 +84,13 @@ export class CourseItemPublicService  {
   getCourses() {
     return courses;
   }
-  getItemById(id) {
+  getCourseById(id) {
     return courses.find(x => x.id == id);
+  }
+  updateCourse(item) {
+    courses.push(item);
+  }
+  removeCourse() {
+
   }
 }

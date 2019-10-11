@@ -14,7 +14,6 @@ export class UserService {
   constructor() {
     this.storageData = JSON.parse(localStorage.getItem(storageName)) || userData;
   }
-
   get() {
     return [...this.storageData]
   }
@@ -33,5 +32,4 @@ export class UserService {
     this.storageData.splice(this.userIndex(user),1);
     return this.update();
   }
-
 }
