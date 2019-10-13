@@ -11,7 +11,7 @@
       </div>
     </app-search>
     <ul class="courses-list">
-      <li *ngFor="let course of (dataObs$ | async)">
+      <li *ngFor="let course of courseList | orderBy:'creationDate' | filter: searchText">
         <app-course [course]="course"(logId)="logId($event)"></app-course>
       </li>
     </ul>

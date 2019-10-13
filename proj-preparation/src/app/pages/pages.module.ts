@@ -5,26 +5,24 @@ import { CourseComponent } from './search-page/course/course.component';
 import { CoursesComponent } from './search-page/courses/courses.component';
 import { SearchComponent } from './search-page/search/search.component';
 import { SharedModule } from '../shared/shared.module';
-import { AddCourseComponent } from './search-page/add-course/add-course.component'
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     CourseComponent,
     CoursesComponent,
     SearchComponent,
-    AddCourseComponent
   ],
   imports: [
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
     SharedModule,
     FormsModule,
-
   ],
   exports: [
     CoursesComponent,
-    AddCourseComponent
   ]
 })
 export class PagesModule {}

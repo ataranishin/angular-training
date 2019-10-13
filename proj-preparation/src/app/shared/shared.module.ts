@@ -9,7 +9,7 @@ import { DurationPipe } from './pipes/duration.pipe';
 import { OrderByPipe } from './pipes/orderBy.pipe';
 import { BorderDirective } from './directive/border.directive';
 import { FilterPipe } from './pipes/filter.pipe';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -24,6 +24,7 @@ import { FilterPipe } from './pipes/filter.pipe';
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
   ],
   exports: [
     HeaderComponent,

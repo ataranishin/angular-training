@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { CourseItemPublicService } from '../../../core/service/course-item-public.service';
+// import { CourseItemPublicService } from '../../../core/service/course-item-public.service';
 import { ICourseItem } from '../course/courses-content.model';
-import { ObsService } from '../../../core/service/obs.service';
-import { filter } from 'rxjs/operators';
+import { HTTPService } from '../../../core/service/httpservice.service';
+
 
 @Component({
   selector: 'app-courses',
@@ -12,14 +12,15 @@ import { filter } from 'rxjs/operators';
 export class CoursesComponent implements OnInit {
   public searchable: string = '';
   public searchText: string = '';
-  public courseList: ICourseItem[] = [];
-  public c;
-  constructor(private coursesService: CourseItemPublicService,@Inject(ObsService) public obsService: ObsService) {}
-  public dataObs$;
+  public courseList = [];
+  constructor(private coursesService: HTTPService) {}
   public ngOnInit(): void {
-    this.courseList = this.coursesService.getCourses();
-    this.dataObs$ = this.obsService.createDataObs().pipe(filter(course => course.title=='Video #1'));
-    this.dataObs$.subscribe(v => console.log(v));
+    this.getCourses();
+  }
+  private getCourses(): void {
+    this.coursesService.getCourses().subscribe(course => {
+      this.courseList = course;
+    })
   }
   public setSearchable(): void{
     this.searchable = this.searchText;
