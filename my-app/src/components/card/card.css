@@ -1,0 +1,112 @@
+@import "https://fonts.googleapis.com/css?family=Indie+Flower"
+@media (min-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+	.contents-game {
+		width: 900px;
+		height: 500px;
+	}
+
+	 .tile {
+		height: 125px;
+		width: 125px;
+	}
+}
+
+/*
+html, body, div, span, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+} */
+body,
+html {
+  height: 100%;
+}
+
+body {
+  color: #787a80;
+  background-color: #87CEFA;
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1024px;
+		min-height: 700px;
+}
+.contents-game {
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.backskirt {
+  background: url(./images/backskirt.png) 50% 50% no-repeat;
+  display: block;
+  position: absolute;
+  width: 125px;
+  height: 125px;
+
+
+}
+.tile {
+    margin: 0.2rem 0.2rem;
+    font-size: 0;
+    cursor: pointer;
+}
+.flipped {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+          transition: transform 0.5s, background 0.5s;
+          backface-visibility: hidden;
+}
+.tile.flipped img {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+img {
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0.2s linear,
+  opacity 0.2s linear;
+  -moz-transition: visibility 0.2s linear,
+  opacity 0.2s linear;
+  -o-transition: visibility 0.2s linear,
+  opacity 0.2s linear;
+}
+.level-1 {
+	width: 530px;
+	height: 300px;
+}
+ul {
+	list-style: none
+}
+.counter {
+	position: absolute;
+	left: 10%;
+	top: 4%;
+}
