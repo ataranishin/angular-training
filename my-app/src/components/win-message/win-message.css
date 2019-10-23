@@ -1,0 +1,32 @@
+.win-message {
+padding: 80px 20px;
+text-align: center;
+}
+.message-heading {
+  margin-bottom: 10px;
+  color: #28aadc;
+  font-size: 45px;
+}
+.message {
+    margin-bottom: 10px;
+    color: #28aadc;
+    font-size: 45px;
+}
+.win-message-container {
+  text-align: center;
+  margin-top: 15%;
+}
+.turn-button {
+  margin: 0;
+  display: inline-block;
+  padding: 5px;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 14px;
+  appearance: none;
+  background: #483D8B;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  cursor: pointer;
+}
