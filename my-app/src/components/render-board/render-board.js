@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const RenderBoard = (props) => {
   const {cards,handleClick,renderCards,classLevel} = props;
@@ -12,4 +13,9 @@ const RenderBoard = (props) => {
     </div>
   )
 }
-export default RenderBoard;
+const mapStateToProps = ({cards}) => {
+  return  {
+  cards
+  }
+}
+export default connect(mapStateToProps)(RenderBoard);
