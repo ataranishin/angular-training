@@ -15,7 +15,8 @@ const initialState = {
   flippedTiles: 0,
   numMoves:0,
   home: false,
-  endGame: false
+  endGame: false,
+  win: false
 }
 
 const reducer = (state=initialState,action) => {
@@ -27,23 +28,24 @@ const reducer = (state=initialState,action) => {
         showComp,
         cards,
         level,
-        numTiles
+        numTiles,
+        home: false
       }
     case "BACK_HOME":
       return {
-        ...state, home: action.home,cards:action.cards
+        ...state, home: true,showComp: false,cards:initialCards,win:false,numMoves:0,flippedTiles: 0
       }
     case "FIRST_FLIP":
       return {
         ...state,
-        card1flipped:action.card1flipped,
+        card1flipped:true,
         card1: action.card1,
         card1id:action.card1id,
       }
     case "SECOND_FLIP":
       return {
         ...state,
-        card2flipped:action.card2flipped,
+        card2flipped:true,
         card2:action.card2,
         card2id: action.card2id,
       }
@@ -77,6 +79,11 @@ const reducer = (state=initialState,action) => {
       return {
         ...state,
         flippedTiles: state.flippedTiles+2
+      }
+    case "WIN_GAME":
+      return {
+        ...state,
+        win: true
       }
     default:
       return state

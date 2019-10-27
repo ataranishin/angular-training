@@ -7,7 +7,8 @@ import {
   resetCards,
   countCards,
   turnCards,
-  countFlipped
+  countFlipped,
+  winGame
 } from './actions';
  export {
    renderCards,
@@ -18,5 +19,6 @@ import {
    countCards,
    resetCards,
    turnCards,
-   countFlipped
+   countFlipped,
+   winGame
  }

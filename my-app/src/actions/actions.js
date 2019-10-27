@@ -8,11 +8,10 @@ export const renderCards = ({showComp,cards,level,numTiles}) => {
     numTiles
   }
 }
-export const backHomePage = ({home,cards}) => {
+export const backHomePage = () => {
   return {
     type: "BACK_HOME",
-    home,
-    cards
+
   }
 }
 export const firstFlip = ({card1flipped,card1,card1id}) => {
@@ -58,5 +57,10 @@ export const countCards = () => {
 export const countFlipped = () => {
   return {
     type: "COUNT_FLIPPED"
+  }
+}
+export const winGame = () => {
+  return {
+    type: "WIN_GAME"
   }
 }

@@ -15,11 +15,11 @@ class Game extends React.Component {
   //   numTiles: null
   // }
   homePage = () => {
-    this.props.backHomePage({home:true,cards:null})
+    this.props.backHomePage()
   }
   shuffle = (arr) => {
     const last = arr.length-1;
-    for(let i = last; i > 0; i--){
+    for(let i = last; i > 0; i--) {
       const j = Math.floor(Math.random() * i);
       const temp = arr[i];
       arr[i] = arr[j];

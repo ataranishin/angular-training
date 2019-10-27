@@ -1,7 +1,15 @@
 import React from 'react';
+import Game from '../game'
 import { containerRestart, buttonRestart } from '../styles-object';
-const RestartGame = (props) => {
-  const {returnHome} = props;
+import { connect } from 'react-redux';
+import { backHomePage } from '../../actions';
+class RestartGame extends React.Component {
+  backHomePage = () => {
+    this.props.backHomePage();
+  }
+  render() {
+
+  const {returnHome} = this.props;
   const restartText = 'Try again';
   return (
     <div style={containerRestart} className='restart-game'>
@@ -14,4 +22,13 @@ const RestartGame = (props) => {
     </div>
   )
 }
-export default RestartGame;
+}
+const mapStateToProps = ({home}) => {
+  return {
+    home
+  }
+}
+const mapDispatchToProps = {
+  backHomePage
+}
+export default connect(mapStateToProps,mapDispatchToProps)(RestartGame);
