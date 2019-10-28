@@ -4,16 +4,8 @@ import StartMenu from '../start-menu';
 import ChooseLevel from '../choose-level';
 import { connect } from 'react-redux';
 import './game.css';
-import { initialCards } from '../card';
 import { renderCards,backHomePage } from '../../actions';
 class Game extends React.Component {
-  // state = {
-  //   showComp: false,
-  //   cards: initialCards,
-  //   level:"",
-  //   home: false,
-  //   numTiles: null
-  // }
   homePage = () => {
     this.props.backHomePage()
   }
@@ -38,15 +30,7 @@ class Game extends React.Component {
       newCards.push(this.props.cards[i],this.props.cards[i]);
     }
     newCards = this.shuffle(newCards);
-
-    // this.setState({
-    //   showComp: true,
-    //   cards: newCards,
-    //   level: e.target,
-    //   numTiles: numTiles
-    // })
     this.props.renderCards({
-      showComp:true,
       cards:newCards,
       level:e.target,
       numTiles:numTiles

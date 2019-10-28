@@ -1,66 +1,38 @@
-const RENDER_CARDS = "RENDER_CARDS";
-export const renderCards = ({showComp,cards,level,numTiles}) => {
-  return {
-    type: "RENDER_CARDS",
-    showComp,
+import {COUNT_CARDS,COUNT_FLIPPED,WIN_GAME,BACK_HOME,HIDE_CARDS,RENDER_CARDS,FIRST_FLIP,SECOND_FLIP,TURN_BACK_CARDS} from '../constants/game'
+
+export const countCards = () => ({type: COUNT_CARDS});
+export const countFlipped = () => ({type: COUNT_FLIPPED});
+export const winGame = () => (dispatch)=> {
+  setTimeout(() => dispatch({
+    type: WIN_GAME,
+  }),2000)
+}
+export const backHomePage = () => ({type: BACK_HOME});
+export const renderCards = ({showComp,cards,level,numTiles}) => ({
+    type: RENDER_CARDS,
     cards,
     level,
     numTiles
-  }
-}
-export const backHomePage = () => {
-  return {
-    type: "BACK_HOME",
-
-  }
-}
-export const firstFlip = ({card1flipped,card1,card1id}) => {
-  return {
-    type: "FIRST_FLIP",
+})
+export const firstFlip = ({card1flipped,card1,card1id}) => ({
+    type: FIRST_FLIP,
     card1flipped,
     card1,
     card1id,
-
-  }
-}
-export const secondFlip = ({card2flipped,card2,card2id}) => {
-  return {
-    type: "SECOND_FLIP",
+})
+export const secondFlip = ({card2flipped,card2,card2id}) => ({
+    type: SECOND_FLIP,
     card2flipped,
     card2,
     card2id,
-  }
+})
+export const hideMatchCards = () => (dispatch) => {
+  setTimeout(() => dispatch({
+    type: HIDE_CARDS,
+  }),2000)
 }
-export const hideMatchCards = ({card1,card2}) => {
-  return {
-    type: "HIDE_CARDS",
-    card1,card2
-  }
-}
-export const resetCards = () => {
-  return {
-    type: "HIDE_CARDS"
-  }
-}
-export const turnCards = ({card1,card2}) => {
-  return {
-    type: "TURN_BACK_CARDS",
-    card1,
-    card2
-  }
-}
-export const countCards = () => {
-  return {
-    type: "COUNT_CARDS"
-  }
-}
-export const countFlipped = () => {
-  return {
-    type: "COUNT_FLIPPED"
-  }
-}
-export const winGame = () => {
-  return {
-    type: "WIN_GAME"
-  }
+export const turnCards = () => (dispatch) => {
+  setTimeout(() => dispatch({
+    type: TURN_BACK_CARDS,
+  }),2000)
 }

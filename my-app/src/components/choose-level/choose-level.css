@@ -1,5 +1,20 @@
-.level-one .level-two {
+ul {
+  display: inline-block;
+  list-style: none
+}
+ /* .level-one .level-two {
+  display: inline-block;
+  cursor: pointer;
   color: '#800080';
-  font-size: '30px';
-  cursor: 'pointer';
+  font-size: 30px;
+} */
+.level-one {
+  cursor: pointer;
+	width: 530px;
+	height: 300px;
+}
+.level-two {
+  cursor: pointer;
+	width: 800px;
+	height: 400px;
 }

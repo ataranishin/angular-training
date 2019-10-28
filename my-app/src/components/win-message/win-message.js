@@ -1,5 +1,4 @@
 import React from 'react';
-import Game from '../game'
 import './win-message.css'
 
 class WinMessage extends React.Component {

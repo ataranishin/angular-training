@@ -4,7 +4,6 @@ import {
   firstFlip,
   backHomePage,
   hideMatchCards,
-  resetCards,
   countCards,
   turnCards,
   countFlipped,
@@ -17,7 +16,6 @@ import {
    secondFlip,
    hideMatchCards,
    countCards,
-   resetCards,
    turnCards,
    countFlipped,
    winGame

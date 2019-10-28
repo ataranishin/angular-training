@@ -1,0 +1,9 @@
+export const COUNT_CARDS = "COUNT_CARDS";
+export const COUNT_FLIPPED = "COUNT_FLIPPED";
+export const WIN_GAME = "WIN_GAME";
+export const BACK_HOME = "BACK_HOME";
+export const HIDE_CARDS = "HIDE_CARDS";
+export const RENDER_CARDS = "RENDER_CARDS";
+export const FIRST_FLIP = "FIRST_FLIP";
+export const SECOND_FLIP = "SECOND_FLIP";
+export const TURN_BACK_CARDS = "TURN_BACK_CARDS";

@@ -4,25 +4,12 @@ import RestartGame from '../restart-game';
 import Counter from '../counter';
 import WinMessage from '../win-message';
 import Game from '../game';
-import { firstFlip,secondFlip, hideMatchCards,resetCards,countCards, turnCards, countFlipped, backHomePage, winGame} from '../../actions';
+import { firstFlip,secondFlip, hideMatchCards,countCards, turnCards, countFlipped, backHomePage, winGame} from '../../actions';
 import { connect } from 'react-redux';
 
 import './card.css';
 
 class Card extends React.Component {
-  // state = {
-  //   card1: null,
-  //   card2: null,
-  //   card2id: null,
-  //   card1id: null,
-  //   card1flipped: false,
-  //   card2flipped: false,
-  //   numTiles: 0,
-  //   flippedTiles: 0,
-  //   numMoves:0,
-  //   home: false,
-  //   endGame: false
-  // }
   gameCounter = () => {
     this.props.countCards();
   }
@@ -39,67 +26,25 @@ class Card extends React.Component {
       )
     })
   }
-  compareFlippedAndNumTiles = (numTiles) => {
-    if(this.state.flippedTiles === numTiles) {
-      setTimeout(() => {
-        this.gameWin();
-    },2000)
-    }
-  }
-  resetFlippedTiles = () => {
-    this.setState({
-      flippedTiles: 0
-    })
-  }
-  endGame = () => {
-    this.setState({
-      winGame: true,
-      flippedTiles: 0
-    })
-  }
-  countFlippedTiles = () => {
-    this.setState({
-      flippedTiles: this.state.flippedTiles+2
-    })
-  }
-  hideMatchCards = (card1,card2) => {
-    this.props.hideMatchCards({
-      card1,
-      card2
-    })
-  }
-  turnBackMissMatched = (card1,card2) => {
-    this.props.turnCards({
-      card1,
-      card2
-    })
-  }
   goHome = () => {
     this.props.backHomePage();
   }
   gameCardsMissMatch = () => {
-    const {card1,card2} = this.props;
-    setTimeout(() => {
-      this.turnBackMissMatched(card1,card2)
-    },1500)
+    this.props.turnCards();
     this.gameCounter();
   }
   gameCardsMatch = async () => {
-    const {card1,card2,countFlipped,flippedTiles,numTiles} = this.props
-    await setTimeout(() => {
-      this.hideMatchCards(card1,card2)
-    },2000)
+    this.props.hideMatchCards();
     this.gameCounter();
-    countFlipped();
-    if(this.props.flippedTiles == this.props.numTiles) {
+    this.props.countFlipped();
+    if(this.props.flippedTiles === this.props.numTiles) {
       this.gameWin();
+    } else {
+      console.log(this.props.flippedTiles,this.props.numTiles);
     }
   }
   gameWin = () => {
     this.props.winGame();
-  }
-  resetState = () => {
-    this.props.resetCards()
   }
   firstFlip = (card1,card1id) => {
     this.props.firstFlip({
@@ -138,17 +83,17 @@ class Card extends React.Component {
       }
   }
   render() {
-    const {tiles,getBack,checkedLevel,home,win,numMoves} = this.props;
+    const {tiles,level,home,win,numMoves} = this.props;
     if(home) {
       return <Game/>
     }
-    let selectedLevel = this.props.level.classList.contains('level-one') ? "contents-game level-1":"contents-game level-2";
+    let selectedLevel = level.classList.contains('level-one') ? "contents-game level-1":"contents-game level-2";
     if(win) {
-      return <WinMessage returnHome={this.goHome} numMoves={numMoves} endGame={this.endGame} />
+      return <WinMessage
+              returnHome={this.goHome}
+              numMoves={numMoves}
+              endGame={this.endGame} />
     }
-    // if(endGame) {
-    //   return <Game/>
-    // }
     return (
       <div className='container'>
         <Counter />
@@ -193,7 +138,6 @@ const mapStateToProps = ({
     card1id,
     card1flipped,
     card2flipped,
-    numTiles,
     flippedTiles,
     numMoves,
     home,
@@ -205,7 +149,6 @@ const mapDispatchToProps = {
   firstFlip,
   secondFlip,
   hideMatchCards,
-  resetCards,
   countCards,
   turnCards,
   countFlipped,
